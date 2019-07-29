@@ -14,6 +14,7 @@
     <name>business-cards</name>
     <description>Service creation and exchange of business cards</description>
 
+
     <properties>
         <java.version>12</java.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
