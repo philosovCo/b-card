@@ -28,8 +28,9 @@ public class PersonService {
     }
 
     public Person update(Person person) {
-        PersonEntity entity = repository.findById(person.getId())
-                                        .orElse(new PersonEntity());
+        PersonEntity entity =
+                repository.findById(person.getId())
+                        .orElseThrow(PersonNotFoundException::new);
         PersonMapper.fillEntity(entity, person);
         return PersonMapper.toModel(repository.save(entity));
     }
