@@ -41,7 +41,7 @@ public class RegistrationService {
                     true,
                     true,
                     true,
-                    false
+                    true
             );
 
         } else {
