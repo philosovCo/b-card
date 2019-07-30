@@ -21,13 +21,10 @@ public class PersonMapper {
         if (entity == null) {
             entity = new PersonEntity();
         }
-
-        entity.toBuilder()
-                .id(model.getId())
-                .surName(model.getSurName())
-                .name(model.getName())
-                .patrName(model.getPatrName())
-                .birthDate(model.getBirthDate())
-                .build();
+        entity.setId(model.getId());
+        entity.setSurName(model.getSurName());
+        entity.setName(model.getName());
+        entity.setPatrName(model.getPatrName());
+        entity.setBirthDate(model.getBirthDate());
     }
 }
