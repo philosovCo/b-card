@@ -43,6 +43,7 @@ public class RegistrationService {
                     true,
                     true
             );
+            userRepository.save(user);
 
         } else {
             if (userOptional.get().isEnabled()) {
