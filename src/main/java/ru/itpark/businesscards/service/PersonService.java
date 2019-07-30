@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.itpark.businesscards.dto.Person;
 import ru.itpark.businesscards.entity.PersonEntity;
+import ru.itpark.businesscards.entity.UserEntity;
 import ru.itpark.businesscards.exeptions.PersonNotFoundException;
 import ru.itpark.businesscards.mapper.PersonMapper;
 import ru.itpark.businesscards.repository.PersonRepository;
@@ -21,17 +22,19 @@ public class PersonService {
                 .orElseThrow(PersonNotFoundException::new);
     }
 
-    public Person create(Person person) {
+    public Person create(Person person,UserEntity user) {
         PersonEntity entity = new PersonEntity();
         PersonMapper.fillEntity(entity, person);
+        entity.setUser(user);
         return PersonMapper.toModel(repository.save(entity));
     }
 
-    public Person update(Person person) {
+    public Person update(Person person, UserEntity user) {
         PersonEntity entity =
                 repository.findById(person.getId())
                         .orElseThrow(PersonNotFoundException::new);
         PersonMapper.fillEntity(entity, person);
+        entity.setUser(user);
         return PersonMapper.toModel(repository.save(entity));
     }
 

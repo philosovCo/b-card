@@ -20,4 +20,14 @@ public interface Url {
         String FULL = ROOT + SLASH + PART;
     }
 
+    interface Authentication {
+        String PART = "authentication";
+        String FULL = ROOT + SLASH + PART;
+    }
+
+    interface Registration {
+        String PART = "registration";
+        String FULL = ROOT + SLASH + PART;
+    }
+
 }
