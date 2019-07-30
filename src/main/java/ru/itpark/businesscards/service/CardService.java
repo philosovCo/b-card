@@ -18,7 +18,6 @@ public class CardService {
         return repository.findById(id)
                 .map(CardMapper::toModel)
                 .orElseThrow(CardNotFoundException::new);
-
     }
 
     public void delete(long id) {
