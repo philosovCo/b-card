@@ -11,5 +11,5 @@ public class RegistrationRequestDto {
 //  private String name;
   private String username;
   private String password;
-  private Person personalInfo;
+  private PersonDto personalInfo;
 }

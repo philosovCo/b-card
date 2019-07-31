@@ -35,8 +35,9 @@ public class RegistrationService {
                     true,
                     true
             );
+
             userRepository.save(user);
-            personService.create(dto.getPersonalInfo(), user);
+            personService.save(dto.getPersonalInfo(), user);
         } else if (userOptional.get().isEnabled()) {
             throw new UsernameAlreadyExistsException(dto.getUsername());
 

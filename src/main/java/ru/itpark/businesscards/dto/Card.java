@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Card {
     private long id;
-    private Person person;
+    private PersonDto person;
     private Job job;
     private List<Contact> contactList;
     private List<SocialNetwork> socialNetworkList;
